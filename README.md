@@ -8,3 +8,9 @@ Discord Bot for custom quotes
 > DISCORD_TOKEN=sEcReT-kEy
 > ```
 > 
+
+## Programming goals
+
+* Read from global list of quotes
+* Add quotes to global list of quotes
+* Take in quotes from user for a server
