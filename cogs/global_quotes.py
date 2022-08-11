@@ -1,5 +1,4 @@
 from discord.ext import commands
-import discord
 import random
 import json
 
@@ -8,7 +7,7 @@ class GlobalQuotes(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def random_quote(self, ctx):
+    async def random_global_quote(self, ctx):
         with open('default_quotes.json') as f:
             quotes = json.load(f)
         random_quote = random.choice(quotes["default_quotes"])

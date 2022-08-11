@@ -1,9 +1,6 @@
 from discord.ext import commands
 import discord
-import asyncio
-import random
 import os
-import json
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -21,6 +18,7 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='q!help'))
 
 @bot.event
 async def on_error(event, *args, **kwargs):
