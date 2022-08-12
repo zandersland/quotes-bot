@@ -63,12 +63,14 @@ class CustomQuotes(commands.Cog):
     async def list_quotes(self, ctx):
         print("Listing quotes for guild {}".format(ctx.guild.id))
         quotes = self.load_quotes(str(ctx.guild.id))
-        # embed = discord.Embed(title="Custom Quotes", description="Here are the custom quotes for this server:", color=discord.Color.blurple())
-        # for quote, location in zip(quotes, range(1, len(quotes) + 1)):
-            # embed.add_field(name=location, value=quote, inline=False)
-        # await ctx.send(embed=embed)
+
+        if len(quotes) == 0:
+            await ctx.send("No quotes found! :thumbsdown:")
+            return
         
-        # await ctx.send("This command is not yet implemented")
+        for quote in quotes:
+            pass
+
         buttons = [u"\u23EA", u"\u25C0", u"\u25B6", u"\u23E9"]
         current = 0
         msg = await ctx.send(embed=discord.Embed(title="Custom Quotes", description=f"Here are the custom quotes for this server:\n{quotes[current]}", color=discord.Color.blurple()))
